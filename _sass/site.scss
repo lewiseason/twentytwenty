@@ -1,0 +1,182 @@
+$background: #f5f5f5;
+$primary: #333333;
+
+$sidebar-width: 260px;
+$sidebar-padding: 20px;
+
+$sidebar-border-width: 2px;
+
+@mixin styleless-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $background;
+  color: $primary;
+  font-family: 'Crimson Text', serif;
+  font-size: 15pt;
+}
+
+code, tt, pre, kbd, samp {
+  font-family: 'Courier Prime', monospace;
+}
+
+kbd {
+  background-color: $primary;
+  color: $background;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+.container {
+  @media (min-width: 1200px) { width: 170px; }
+  @media (min-width: 992px) { width: 970px; }
+  @media (min-width: 768px) { width: 750px; }
+
+  padding: 0 1.5em;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container.home {
+  text-align: center;
+  margin: 25vh auto;
+
+  h1 {
+    font-size: 2.5em;
+  }
+  a {
+    text-decoration: none;
+  }
+
+  .avatar {
+    border-radius: 50%;
+  }
+
+  nav a {
+    padding: 0 0.75em
+  }
+}
+
+a {
+  color: inherit;
+}
+
+blockquote {
+  border-left: $sidebar-border-width solid darken($background, 50%);
+  margin: 1em;
+  margin-left: -$sidebar-padding;
+  padding-left: $sidebar-padding;
+}
+
+hr {
+  border: none;
+  border-top: 1px solid darken($background, 10%);
+  width: 50%;
+  margin: 1.5em auto;
+}
+
+nav.main {
+  padding: 1em 0;
+  font-size: 1.2em;
+  color: lighten($primary, 20%);
+
+  a {
+    padding-right: 1.5em;
+    text-decoration: none;
+
+    &:hover { color: black; }
+  }
+}
+
+nav.elsewhere {
+  font-size: 0.85em;
+  color: lighten($primary, 20%);
+  a:hover { color: black; }
+}
+
+footer.main {
+  padding: 1em 0;
+  color: lighten($primary, 20%);
+  font-style: italic;
+}
+
+main {
+  position: relative;
+
+  aside {
+    background-color: darken($background, 10%);
+    border-width: 0 $sidebar-border-width;
+    padding: .5em $sidebar-padding;
+
+    border-left: $sidebar-border-width solid darken($background, 50%);
+
+    margin-left: -$sidebar-padding;
+    padding-left: $sidebar-padding;
+
+
+
+    @media (min-width: 1200px + $sidebar-width) {
+      position: absolute;
+      width: $sidebar-width;
+      border-right: $sidebar-border-width solid darken($background, 50%);
+      border-left: none;
+
+      left: -($sidebar-width  + ($sidebar-padding * 2));
+    }
+  }
+}
+
+div.highlighter-rouge {
+  border-left: $sidebar-border-width solid darken($background, 50%);
+  margin: 1em;
+  margin-left: -$sidebar-padding;
+  padding-left: $sidebar-padding;
+}
+
+.highlight {
+  background-color: transparent;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+p {
+  line-height: 1.5em;
+}
+
+article.post header {
+  h1 { margin-bottom: 0.1em; }
+}
+
+.post-meta {
+  @include styleless-list;
+  color: lighten($primary, 20%);
+  font-size: 0.85em;
+
+  li {
+    display: inline;
+    &::after {
+      content: '·';
+      padding: 0 .25em;
+    }
+    &:last-child::after { content: '' }
+  }
+}
+
+.post-archives {
+  @include styleless-list;
+
+  h2 {
+    font-size: 1em;
+    margin-top: 0;
+  }
+
+  > li {
+    margin-bottom: 3em;
+  }
+
+}

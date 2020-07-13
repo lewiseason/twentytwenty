@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+
+<body>
+  <div class="container home">
+    <h1>
+      <a href="/" rel="me">
+        <img src="{{ site.avatar }}" alt="{{ site.title }}" class="avatar">
+        <br>
+        {{ site.title }}
+      </a>
+    </h1>
+
+    {% include navigation.html %}
+    {% include elsewhere.html %}
+  </div>
+</body>
+
+</html>

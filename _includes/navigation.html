@@ -1,0 +1,13 @@
+<header>
+  <nav class="main">
+    {% for link in site.data.navigation.main %}
+      {% if link.url contains "http" %}
+        {% assign url = link.url %}
+      {% else %}
+        {% assign url = link.url | relative_url %}
+      {% endif %}
+
+      <a href="{{ url }}">{{ link.title }}</a>
+    {% endfor %}
+  </nav>
+</header>
