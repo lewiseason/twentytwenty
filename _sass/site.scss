@@ -28,6 +28,7 @@ kbd {
   color: $background;
   padding: 2px 4px;
   border-radius: 4px;
+  font-size: 10pt;
 }
 
 figure {
@@ -138,15 +139,18 @@ main {
     }
   }
 }
+div.highlighter-rouge {
+  margin: 1em 0;
+}
 
 div.highlight {
   border-left: $sidebar-border-width solid darken($background, 50%);
-  margin: 1em;
+  margin: 0em;
   margin-left: -$sidebar-padding;
   padding-left: $sidebar-padding;
   overflow-x: auto;
 
-  font-size: 11pt;
+  font-size: 9pt;
 }
 
 .highlight {
