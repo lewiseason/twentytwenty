@@ -21,6 +21,11 @@ body {
 
 code, tt, pre, kbd, samp {
   font-family: 'Courier Prime', monospace;
+  font-size: 11pt;
+}
+
+pre {
+  margin: 0;
 }
 
 kbd {
@@ -28,7 +33,6 @@ kbd {
   color: $background;
   padding: 2px 4px;
   border-radius: 4px;
-  font-size: 10pt;
 }
 
 figure {
