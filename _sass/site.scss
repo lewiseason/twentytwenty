@@ -47,6 +47,17 @@ dt {
   font-weight: bold;
 }
 
+// https://css-tricks.com/snippets/css/prevent-superscripts-and-subscripts-from-affecting-line-height/
+sup, sub {
+  vertical-align: baseline;
+  position: relative;
+  top: -0.4em;
+}
+
+sub { 
+  top: 0.4em; 
+}
+
 .container {
   @media (min-width: 1200px) { width: 170px; }
   @media (min-width: 992px) { width: 970px; }
