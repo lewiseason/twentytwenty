@@ -4,7 +4,9 @@
 <body>
 
   <div class="container">
-    {% include navigation.html %}
+    {% unless page.suppress_navigation %}
+      {% include navigation.html %}
+    {% endunless %}
 
     <main>
       {{ content }}
