@@ -69,6 +69,7 @@ sub {
   padding: 0 $container-padding;
   margin-right: auto;
   margin-left: auto;
+  max-width: calc(100vw - ($container-padding * 2))
 }
 
 .container.home {
@@ -100,6 +101,7 @@ blockquote {
   margin: 1em;
   margin-left: -$sidebar-padding;
   padding-left: $sidebar-padding;
+  width: 100%;
 }
 
 hr {
@@ -142,16 +144,13 @@ main {
     border-width: 0 $sidebar-border-width;
     padding: .5em $sidebar-padding;
 
-    border-left: $sidebar-border-width solid darken($background, 50%);
-
     margin-left: -$sidebar-padding;
     padding-left: $sidebar-padding;
-
-
+    width: 100%;
 
     @media (min-width: 1200px + $sidebar-width) {
       position: absolute;
-      width: $sidebar-width;
+      width: $sidebar-width !important;
       border-right: $sidebar-border-width solid darken($background, 50%);
       border-left: none;
 
