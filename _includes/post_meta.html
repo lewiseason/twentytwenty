@@ -34,7 +34,11 @@
         {% endif %}
       {% endfor %}
     {% endfor %}
-
   </li>
   {% endif %}
+
+  {% assign time = page.content | number_of_words | divided_by: 180 | plus: 1 %}
+  <li>
+    {{ time }} minute read
+  </li>
 </ul>
