@@ -17,6 +17,7 @@ body {
   color: $primary;
   font-family: 'Crimson Text', serif;
   font-size: 15pt;
+  margin: 0;
 }
 
 code, tt, pre, kbd, samp {
@@ -39,6 +40,7 @@ figure {
   margin: 0;
   img { max-width: 100%; }
   figcaption { text-align: center; font-style: italic; }
+  @media (max-width: 768px) { margin: 0 -1.5em; }
 }
 
 dt {
