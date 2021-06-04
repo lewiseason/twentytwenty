@@ -1,5 +1,7 @@
-<footer class="main">
-  {% if page.footer %}
-  <p>{{ page.footer }}</p>
-  {% endif %}
-</footer>
+{% if not page.nofooter %}
+  <footer class="main">
+    {% if page.footer %}
+    <p>{{ page.footer }}</p>
+    {% endif %}
+  </footer>
+{% endif %}
