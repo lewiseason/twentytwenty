@@ -1,4 +1,5 @@
-{% if not page.nofooter %}
+{% if page.nofooter %}
+{% else %}
   <footer class="main">
     {% if page.footer %}
     <p>{{ page.footer }}</p>
