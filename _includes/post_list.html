@@ -1,13 +1,23 @@
-<ul class="post-archives">
+<table class="post-archives">
   {% for post in include.posts %}
-  <li>
-    {% include post_meta.html post=post %}
+    {% if include.splityear %}
+      {% assign previous_index = forloop.index0 | minus: 1 %}
+      {% assign previous = include.posts[previous_index] %}
+      {% assign previous_year = previous.date | date: "%Y" %}
+      {% assign year = post.date | date: "%Y" %}
 
-    <h2>
-      <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
-    </h2>
+      {% if forloop.index0 > 0 and previous_year != year %}
+        <tr><td colspan="2"><br></td></tr>
+      {% endif %}
+    {% endif %}
 
-    {{ post.excerpt | strip_html | escape }}
-  </li>
+    <tr>
+      <td class="post-date">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+      </td>
+      <td>
+        <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+      </td>
+    </tr>
   {% endfor %}
-</ul>
+</table>

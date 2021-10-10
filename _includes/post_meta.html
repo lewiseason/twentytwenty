@@ -37,8 +37,7 @@
   </li>
   {% endif %}
 
-  {% assign time = include.post.content | number_of_words | divided_by: 180 | plus: 1 %}
   <li>
-    {{ time }} minute read
+    {{ include.post.content | number_of_words }} words
   </li>
 </ul>
